@@ -1,0 +1,9 @@
+mixin drawbutton(key)
+  - let className = "keypad__button"
+  if (key.text === "Del")
+    - className = "keypad__button keypad__button--light"
+  if (key.text === "Reset")
+    - className = "keypad__button keypad__button--large keypad__button--light"
+  if (key.text === "=")
+    - className = "keypad__button keypad__button--large keypad__button--dark"
+  button(class= className type="button", data-value= key.value)= key.text

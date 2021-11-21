@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&amp;display=swap" rel="stylesheet">
+    <title>Calculator app main</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" type="module"></script>
+  </head>
+  <body class="body" data-theme="non-set">
+    <main class="main">
+      <div class="header"> 
+        <h1 class="title">calc </h1>
+        <div class="theme-selector"> 
+          <p class="description">theme </p>
+          <div class="switch-container">
+            <p class="switchvalues-container"><span class="switchvalue switchvalue--one">1</span><span class="switchvalue switchvalue--two">2</span><span class="switchvalue switchvalue--third">3</span></p>
+            <input class="theme-switch" id="theme-switch" type="range" name="themeswitch" min="1" max="3">
+          </div>
+        </div>
+      </div>
+      <output class="calc-display" id="calc-display">0</output>
+      <div class="keypad">
+              <button class="keypad__button" type="button" data-value="7">7</button>
+              <button class="keypad__button" type="button" data-value="8">8</button>
+              <button class="keypad__button" type="button" data-value="9">9</button>
+              <button class="keypad__button keypad__button--light" type="button" data-value="Backspace">Del</button>
+              <button class="keypad__button" type="button" data-value="4">4</button>
+              <button class="keypad__button" type="button" data-value="5">5</button>
+              <button class="keypad__button" type="button" data-value="6">6</button>
+              <button class="keypad__button" type="button" data-value="+">+</button>
+              <button class="keypad__button" type="button" data-value="1">1</button>
+              <button class="keypad__button" type="button" data-value="2">2</button>
+              <button class="keypad__button" type="button" data-value="3">3</button>
+              <button class="keypad__button" type="button" data-value="-">-</button>
+              <button class="keypad__button" type="button" data-value=".">.</button>
+              <button class="keypad__button" type="button" data-value="0">0</button>
+              <button class="keypad__button" type="button" data-value="/">/</button>
+              <button class="keypad__button" type="button" data-value="*">x</button>
+              <button class="keypad__button keypad__button--large keypad__button--light" type="button" data-value="c">Reset</button>
+              <button class="keypad__button keypad__button--large keypad__button--dark" type="button" data-value="Enter">=</button>
+      </div>
+    </main>
+  </body>
+</html>
