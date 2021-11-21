@@ -1,0 +1,9 @@
+@mixin thumb() {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+
+  background-color: var(--toggle-color);
+  border-radius: 50%;
+  border: none;
+}

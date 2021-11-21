@@ -1,0 +1,189 @@
+@use "base";
+@use "layout/header";
+
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  font-family: "Spartan", sans-serif;
+
+  background-color: var(--body-bg);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 588px;
+  padding: 1.5rem;
+}
+
+.header,
+.calc-display,
+.keypad {
+  width: 100%;
+}
+
+.calc-display {
+  padding: 0.76em;
+
+  text-align: right;
+  font-size: clamp(2.1rem, 8.96vw, 3rem);
+
+  background-color: var(--display-bg);
+  color: var(--color);
+  border-radius: 12px;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 3.75rem);
+  column-gap: clamp(0.7rem, 3.41vw, 1.5rem);
+  row-gap: clamp(1rem, 4.69vw, 1.75rem);
+
+  padding: min(6.4vw, 32px);
+
+  font-size: clamp(1.8rem, 7.68vw, 2rem);
+
+  background-color: var(--keypad-bg);
+  border-radius: 12px;
+
+  &__button {
+    display: block;
+    padding-top: 6px;
+    background-color: var(--key-bg);
+    color: var(--key-color);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    box-shadow: 0 4px var(--key-shadow);
+
+    &--light {
+      font-size: 0.6em;
+      text-transform: uppercase;
+
+      background-color: var(--key-light-bg);
+      color: var(--key-light-color);
+      box-shadow: 0 4px var(--key-light-shadow);
+    }
+
+    &--dark {
+      font-size: 0.6em;
+      background-color: var(--key-dark-bg);
+      color: var(--key-dark-color);
+      box-shadow: 0 4px var(--key-dark-shadow);
+    }
+  }
+}
+
+.keypad__button--large {
+  grid-column: span 2;
+}
+
+[data-theme="non-set"] {
+  @media (prefers-color-scheme: dark) {
+    --body-bg: var(--body-bg-dark);
+    --display-bg: var(--display-bg-dark);
+    --toggle-bg: var(--toggle-bg-dark);
+    --keypad-bg: var(--keypad-bg-dark);
+    --key-bg: var(--key-bg-dark);
+    --key-light-bg: var(--key-light-bg-dark);
+    --key-dark-bg: var(--key-dark-bg-dark);
+
+    --color: var(--color-dark);
+    --toggle-color: var(--toggle-color-dark);
+    --key-color: var(--key-color-dark);
+    --key-light-color: var(--key-light-color-dark);
+    --key-dark-color: var(--key-dark-color-dark);
+
+    --key-shadow: var(--key-shadow-dark);
+    --key-light-shadow: var(--key-light-shadow-dark);
+    --key-dark-shadow: var(--key-dark-shadow-dark);
+  }
+
+  @media (prefers-color-scheme: light) {
+    --body-bg: var(--body-bg-light);
+    --display-bg: var(--display-bg-light);
+    --toggle-bg: var(--toggle-bg-light);
+    --keypad-bg: var(--keypad-bg-light);
+    --key-bg: var(--key-bg-light);
+    --key-light-bg: var(--key-light-bg-light);
+    --key-dark-bg: var(--key-dark-bg-light);
+
+    --toggle-color: var(--toggle-color-light);
+    --color: var(--color-light);
+    --key-color: var(--key-color-light);
+    --key-light-color: var(--key-light-color-light);
+    --key-dark-color: var(--key-dark-color-light);
+
+    --key-shadow: var(--key-shadow-light);
+    --key-light-shadow: var(--key-light-shadow-light);
+    --key-dark-shadow: var(--key-dark-shadow-light);
+  }
+}
+
+[data-theme="dark"] {
+  --body-bg: var(--body-bg-dark);
+  --display-bg: var(--display-bg-dark);
+  --toggle-bg: var(--toggle-bg-dark);
+  --keypad-bg: var(--keypad-bg-dark);
+  --key-bg: var(--key-bg-dark);
+  --key-light-bg: var(--key-light-bg-dark);
+  --key-dark-bg: var(--key-dark-bg-dark);
+
+  --color: var(--color-dark);
+  --toggle-color: var(--toggle-color-dark);
+  --key-color: var(--key-color-dark);
+  --key-light-color: var(--key-light-color-dark);
+  --key-dark-color: var(--key-dark-color-dark);
+
+  --key-shadow: var(--key-shadow-dark);
+  --key-light-shadow: var(--key-light-shadow-dark);
+  --key-dark-shadow: var(--key-dark-shadow-dark);
+}
+
+[data-theme="light"] {
+  --body-bg: var(--body-bg-light);
+  --display-bg: var(--display-bg-light);
+  --toggle-bg: var(--toggle-bg-light);
+  --keypad-bg: var(--keypad-bg-light);
+  --key-bg: var(--key-bg-light);
+  --key-light-bg: var(--key-light-bg-light);
+  --key-dark-bg: var(--key-dark-bg-light);
+
+  --toggle-color: var(--toggle-color-light);
+  --color: var(--color-light);
+  --key-color: var(--key-color-light);
+  --key-light-color: var(--key-light-color-light);
+  --key-dark-color: var(--key-dark-color-light);
+
+  --key-shadow: var(--key-shadow-light);
+  --key-light-shadow: var(--key-light-shadow-light);
+  --key-dark-shadow: var(--key-dark-shadow-light);
+}
+
+[data-theme="custom"] {
+  --body-bg: var(--body-bg-custom);
+  --display-bg: var(--display-bg-custom);
+  --toggle-bg: var(--toggle-bg-custom);
+  --keypad-bg: var(--keypad-bg-custom);
+  --key-bg: var(--key-bg-custom);
+  --key-light-bg: var(--key-light-bg-custom);
+  --key-dark-bg: var(--key-dark-bg-custom);
+
+  --toggle-color: var(--toggle-color-custom);
+  --color: var(--color-custom);
+  --key-color: var(--key-color-custom);
+  --key-light-color: var(--key-light-color-custom);
+  --key-dark-color: var(--key-dark-color-custom);
+
+  --key-shadow: var(--key-shadow-custom);
+  --key-light-shadow: var(--key-light-shadow-custom);
+  --key-dark-shadow: var(--key-dark-shadow-custom);
+}

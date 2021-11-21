@@ -1,0 +1,302 @@
+:root {
+  --body-bg: unset;
+  --toggle-bg: unset;
+  --keypad-bg: unset;
+  --display-bg: unset;
+  --key-bg: unset;
+  --key-light-bg: unset;
+  --key-dark-bg: unset;
+  --key-shadow: unset;
+  --key-light-shadow: unset;
+  --key-dark-shadow: unset;
+  --color: unset;
+  --key-color: unset;
+  --key-light-color: unset;
+  --key-dark-color: unset;
+  --toggle-color: unset;
+  --body-bg-light: hsl(0, 0%, 90%);
+  --toggle-bg-light: hsl(0, 5%, 81%);
+  --keypad-bg-light: hsl(0, 5%, 81%);
+  --display-bg-light: hsl(0, 0%, 93%);
+  --key-bg-light: hsl(45, 7%, 89%);
+  --key-light-bg-light: hsl(185, 42%, 37%);
+  --key-dark-bg-light: hsl(25, 98%, 40%);
+  --key-shadow-light: hsl(35, 11%, 61%);
+  --key-light-shadow-light: hsl(185, 58%, 25%);
+  --key-dark-shadow-light: hsl(25, 99%, 27%);
+  --color-light: hsl(60, 10%, 19%);
+  --key-color-light: hsl(60, 10%, 19%);
+  --key-light-color-light: hsl(0, 0%, 100%);
+  --key-dark-color-light: hsl(0, 0%, 100%);
+  --toggle-color-light: hsl(25, 98%, 40%);
+  --body-bg-dark: hsl(222, 26%, 31%);
+  --toggle-bg-dark: hsl(223, 31%, 20%);
+  --keypad-bg-dark: hsl(223, 31%, 20%);
+  --display-bg-dark: hsl(224, 36%, 15%);
+  --key-bg-dark: hsl(30, 25%, 89%);
+  --key-light-bg-dark: hsl(225, 21%, 49%);
+  --key-dark-bg-dark: hsl(6, 63%, 50%);
+  --key-shadow-dark: hsl(28, 16%, 65%);
+  --key-light-shadow-dark: hsl(224, 28%, 35%);
+  --key-dark-shadow-dark: hsl(6, 70%, 34%);
+  --color-dark: hsl(0, 0%, 100%);
+  --key-color-dark: hsl(221, 14%, 31%);
+  --key-light-color-dark: hsl(0, 0%, 100%);
+  --key-dark-color-dark: hsl(0, 0%, 100%);
+  --toggle-color-dark: hsl(6, 63%, 50%);
+  --body-bg-custom: hsl(268, 75%, 9%);
+  --toggle-bg-custom: hsl(268, 71%, 12%);
+  --keypad-bg-custom: hsl(268, 71%, 12%);
+  --display-bg-custom: hsl(268, 71%, 12%);
+  --key-bg-custom: hsl(268, 47%, 21%);
+  --key-light-bg-custom: hsl(281, 89%, 26%);
+  --key-dark-bg-custom: hsl(176, 100%, 44%);
+  --key-shadow-custom: hsl(290, 70%, 36%);
+  --key-light-shadow-custom: hsl(285, 91%, 52%);
+  --key-dark-shadow-custom: hsl(177, 92%, 70%);
+  --color-custom: hsl(52, 100%, 62%);
+  --key-color-custom: hsl(52, 100%, 62%);
+  --key-light-color-custom: hsl(0, 0%, 100%);
+  --key-dark-color-custom: hsl(198, 20%, 13%);
+  --toggle-color-custom: hsl(176, 100%, 44%);
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color);
+}
+
+.title {
+  margin: 0;
+}
+
+.theme-selector {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.description {
+  margin-bottom: 0.6em;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.switchvalues-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3em;
+  padding-inline: 8px;
+  font-size: 0.8rem;
+}
+
+.theme-switch {
+  appearance: none;
+  width: 68px;
+  height: 26px;
+  padding-inline: 4px;
+  background-color: var(--toggle-bg);
+  border-radius: 13px;
+}
+.theme-switch::-moz-range-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: var(--toggle-color);
+  border-radius: 50%;
+  border: none;
+}
+.theme-switch::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: var(--toggle-color);
+  border-radius: 50%;
+  border: none;
+}
+.theme-switch::-ms-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: var(--toggle-color);
+  border-radius: 50%;
+  border: none;
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Spartan", sans-serif;
+  background-color: var(--body-bg);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 588px;
+  padding: 1.5rem;
+}
+
+.header,
+.calc-display,
+.keypad {
+  width: 100%;
+}
+
+.calc-display {
+  padding: 0.76em;
+  text-align: right;
+  font-size: clamp(2.1rem, 8.96vw, 3rem);
+  background-color: var(--display-bg);
+  color: var(--color);
+  border-radius: 12px;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 3.75rem);
+  column-gap: clamp(0.7rem, 3.41vw, 1.5rem);
+  row-gap: clamp(1rem, 4.69vw, 1.75rem);
+  padding: min(6.4vw, 32px);
+  font-size: clamp(1.8rem, 7.68vw, 2rem);
+  background-color: var(--keypad-bg);
+  border-radius: 12px;
+}
+.keypad__button {
+  display: block;
+  padding-top: 6px;
+  background-color: var(--key-bg);
+  color: var(--key-color);
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  box-shadow: 0 4px var(--key-shadow);
+}
+.keypad__button--light {
+  font-size: 0.6em;
+  text-transform: uppercase;
+  background-color: var(--key-light-bg);
+  color: var(--key-light-color);
+  box-shadow: 0 4px var(--key-light-shadow);
+}
+.keypad__button--dark {
+  font-size: 0.6em;
+  background-color: var(--key-dark-bg);
+  color: var(--key-dark-color);
+  box-shadow: 0 4px var(--key-dark-shadow);
+}
+
+.keypad__button--large {
+  grid-column: span 2;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme=non-set] {
+    --body-bg: var(--body-bg-dark);
+    --display-bg: var(--display-bg-dark);
+    --toggle-bg: var(--toggle-bg-dark);
+    --keypad-bg: var(--keypad-bg-dark);
+    --key-bg: var(--key-bg-dark);
+    --key-light-bg: var(--key-light-bg-dark);
+    --key-dark-bg: var(--key-dark-bg-dark);
+    --color: var(--color-dark);
+    --toggle-color: var(--toggle-color-dark);
+    --key-color: var(--key-color-dark);
+    --key-light-color: var(--key-light-color-dark);
+    --key-dark-color: var(--key-dark-color-dark);
+    --key-shadow: var(--key-shadow-dark);
+    --key-light-shadow: var(--key-light-shadow-dark);
+    --key-dark-shadow: var(--key-dark-shadow-dark);
+  }
+}
+@media (prefers-color-scheme: light) {
+  [data-theme=non-set] {
+    --body-bg: var(--body-bg-light);
+    --display-bg: var(--display-bg-light);
+    --toggle-bg: var(--toggle-bg-light);
+    --keypad-bg: var(--keypad-bg-light);
+    --key-bg: var(--key-bg-light);
+    --key-light-bg: var(--key-light-bg-light);
+    --key-dark-bg: var(--key-dark-bg-light);
+    --toggle-color: var(--toggle-color-light);
+    --color: var(--color-light);
+    --key-color: var(--key-color-light);
+    --key-light-color: var(--key-light-color-light);
+    --key-dark-color: var(--key-dark-color-light);
+    --key-shadow: var(--key-shadow-light);
+    --key-light-shadow: var(--key-light-shadow-light);
+    --key-dark-shadow: var(--key-dark-shadow-light);
+  }
+}
+
+[data-theme=dark] {
+  --body-bg: var(--body-bg-dark);
+  --display-bg: var(--display-bg-dark);
+  --toggle-bg: var(--toggle-bg-dark);
+  --keypad-bg: var(--keypad-bg-dark);
+  --key-bg: var(--key-bg-dark);
+  --key-light-bg: var(--key-light-bg-dark);
+  --key-dark-bg: var(--key-dark-bg-dark);
+  --color: var(--color-dark);
+  --toggle-color: var(--toggle-color-dark);
+  --key-color: var(--key-color-dark);
+  --key-light-color: var(--key-light-color-dark);
+  --key-dark-color: var(--key-dark-color-dark);
+  --key-shadow: var(--key-shadow-dark);
+  --key-light-shadow: var(--key-light-shadow-dark);
+  --key-dark-shadow: var(--key-dark-shadow-dark);
+}
+
+[data-theme=light] {
+  --body-bg: var(--body-bg-light);
+  --display-bg: var(--display-bg-light);
+  --toggle-bg: var(--toggle-bg-light);
+  --keypad-bg: var(--keypad-bg-light);
+  --key-bg: var(--key-bg-light);
+  --key-light-bg: var(--key-light-bg-light);
+  --key-dark-bg: var(--key-dark-bg-light);
+  --toggle-color: var(--toggle-color-light);
+  --color: var(--color-light);
+  --key-color: var(--key-color-light);
+  --key-light-color: var(--key-light-color-light);
+  --key-dark-color: var(--key-dark-color-light);
+  --key-shadow: var(--key-shadow-light);
+  --key-light-shadow: var(--key-light-shadow-light);
+  --key-dark-shadow: var(--key-dark-shadow-light);
+}
+
+[data-theme=custom] {
+  --body-bg: var(--body-bg-custom);
+  --display-bg: var(--display-bg-custom);
+  --toggle-bg: var(--toggle-bg-custom);
+  --keypad-bg: var(--keypad-bg-custom);
+  --key-bg: var(--key-bg-custom);
+  --key-light-bg: var(--key-light-bg-custom);
+  --key-dark-bg: var(--key-dark-bg-custom);
+  --toggle-color: var(--toggle-color-custom);
+  --color: var(--color-custom);
+  --key-color: var(--key-color-custom);
+  --key-light-color: var(--key-light-color-custom);
+  --key-dark-color: var(--key-dark-color-custom);
+  --key-shadow: var(--key-shadow-custom);
+  --key-light-shadow: var(--key-light-shadow-custom);
+  --key-dark-shadow: var(--key-dark-shadow-custom);
+}

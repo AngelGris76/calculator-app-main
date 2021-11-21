@@ -1,0 +1,54 @@
+@use "../components/range-thumb";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--color);
+}
+
+.title {
+  margin: 0;
+}
+
+.theme-selector {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.description {
+  margin-bottom: 0.6em;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.switchvalues-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3em;
+  padding-inline: 8px;
+  font-size: 0.8rem;
+}
+
+.theme-switch {
+  appearance: none;
+  width: 68px;
+  height: 26px;
+  padding-inline: 4px;
+  background-color: var(--toggle-bg);
+  border-radius: 13px;
+  &::-moz-range-thumb {
+    @include range-thumb.thumb;
+  }
+  &::-webkit-slider-thumb {
+    @include range-thumb.thumb;
+  }
+  &::-ms-thumb {
+    @include range-thumb.thumb;
+  }
+}
